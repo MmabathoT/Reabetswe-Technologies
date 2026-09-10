@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Dashboard — Reabetswe Technologies</title>
+<meta name="description" content="Track your coding progress at Reabetswe Technologies.">
+<link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <nav class="nav">
+    <a href="index.html" class="brand">
+      <img src="assets/logo.svg" alt="Reabetswe Technologies logo">
+      <span><span class="b-violet">Reabetswe</span> <span class="b-sky">Technologies</span></span>
+    </a>
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-cta" data-auth-slot>
+      <a href="profile.html" class="btn btn-secondary">Log in</a>
+      <a href="register.html" class="btn btn-primary">Enrol now</a>
+    </div>
+  
+  </nav>
+</header>
+
+<main id="main">
+
+<section style="padding:44px 0 0;">
+  <div class="container" data-dashboard>
+    <div style="display:flex;align-items:center;gap:20px;flex-wrap:wrap;margin-bottom:34px;">
+      <div class="avatar-ring"><span data-learner-initial style="font-family:var(--font-head);font-weight:800;font-size:2rem;color:var(--violet-deep);"></span></div>
+      <div>
+        <h1 style="margin-bottom:4px;">Hi, <span data-learner-name></span>!</h1>
+        <p style="margin:0;">Age <span data-learner-age></span> · <span data-learner-format></span></p>
+      </div>
+      <button id="logout-btn" class="btn btn-secondary" style="margin-left:auto;">Log out</button>
+    </div>
+
+    <div class="dashboard-grid">
+      <nav class="dash-nav">
+        <button class="active" data-panel="panel-overview">Overview</button>
+        <button data-panel="panel-modules">My modules</button>
+        <button data-panel="panel-badges">Badges</button>
+        <button data-panel="panel-account">Account</button>
+      </nav>
+
+      <div>
+        <div class="dash-panel active" id="panel-overview">
+          <div class="card" style="margin-bottom:20px;">
+            <h3>Your progress</h3>
+            <div id="module-progress"></div>
+          </div>
+          <div class="grid-2">
+            <div class="card">
+              <div class="card-icon">🗓️</div>
+              <h3>Next physical class</h3>
+              <p>Saturday, 10:00–12:00. Bring your login details if you want to save your work.</p>
+            </div>
+            <div class="card">
+              <div class="card-icon">🌐</div>
+              <h3>Online modules</h3>
+              <p>Available any time — pick up wherever you left off.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="dash-panel" id="panel-modules">
+          <div class="card">
+            <h3>Mark your progress</h3>
+            <p>Tell us how a module is going and we'll update your tracker. (In a full version, this updates automatically as lessons are completed.)</p>
+            <div style="display:flex;flex-wrap:wrap;gap:10px;margin-top:14px;">
+              <button class="btn btn-secondary" data-bump-module="IT & Internet Basics">+ IT Basics</button>
+              <button class="btn btn-secondary" data-bump-module="HTML Foundations">+ HTML</button>
+              <button class="btn btn-secondary" data-bump-module="CSS Styling">+ CSS</button>
+              <button class="btn btn-secondary" data-bump-module="JavaScript Logic">+ JavaScript</button>
+              <button class="btn btn-secondary" data-bump-module="Intro to Python">+ Python</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="dash-panel" id="panel-badges">
+          <div class="grid-3">
+            <div class="card"><div class="card-icon">🏅</div><h3>First page built</h3><p>Awarded after completing HTML Foundations.</p></div>
+            <div class="card"><div class="card-icon">🎨</div><h3>Style star</h3><p>Awarded after completing CSS Styling.</p></div>
+            <div class="card"><div class="card-icon">⚡</div><h3>Logic builder</h3><p>Awarded after completing JavaScript Logic.</p></div>
+          </div>
+        </div>
+
+        <div class="dash-panel" id="panel-account">
+          <div class="card">
+            <h3>Account details</h3>
+            <p><strong>Age:</strong> <span data-learner-age></span></p>
+            <p><strong>Class format:</strong> <span data-learner-format></span></p>
+            <p>Need to update your details? <a href="contact.html">Contact us</a> and we'll help.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand"><img src="assets/logo.svg" alt=""><span>Reabetswe Technologies</span></div>
+        <p>Practical IT and coding skills for young minds — Saturdays in person, and online any day of the week.</p>
+        <div class="social-row">
+          <a href="https://facebook.com/reabetswetechnologies" aria-label="Facebook" target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.4v7A10 10 0 0 0 22 12"/></svg></a>
+          <a href="https://instagram.com/reabetswetechnologies" aria-label="Instagram" target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1"/></svg></a>
+          <a href="https://twitter.com/reabetswetech" aria-label="X (Twitter)" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.9 2H22l-7.6 8.7L23 22h-6.9l-5.4-6.7L4.4 22H1.3l8.2-9.3L1 2h7l4.9 6.1L18.9 2Zm-1.2 18h1.9L7.3 4H5.3l12.4 16Z"/></svg></a>
+          <a href="https://linkedin.com/company/reabetswetechnologies" aria-label="LinkedIn" target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-.96 1.83-1.97 3.77-1.97 4.03 0 4.78 2.5 4.78 5.75V21h-4v-5.7c0-1.36-.02-3.1-1.9-3.1-1.9 0-2.2 1.47-2.2 3v5.8H9z"/></svg></a>
+          <a href="https://youtube.com/@reabetswetechnologies" aria-label="YouTube" target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12s0-3.2-.4-4.7c-.24-.86-.93-1.53-1.8-1.77C18.3 5 12 5 12 5s-6.3 0-7.8.53c-.87.24-1.56.9-1.8 1.77C2 8.8 2 12 2 12s0 3.2.4 4.7c.24.86.93 1.5 1.8 1.75C5.7 19 12 19 12 19s6.3 0 7.8-.55c.87-.24 1.56-.9 1.8-1.75.4-1.5.4-4.7.4-4.7ZM10 15V9l5.2 3-5.2 3Z"/></svg></a>
+          <a href="https://wa.me/27000000000" aria-label="WhatsApp" target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20 3.9A10 10 0 0 0 3.3 16.4L2 22l5.8-1.3A10 10 0 1 0 20 3.9Zm-8 16a8.1 8.1 0 0 1-4.1-1.1l-.3-.2-3 .7.7-2.9-.2-.3A8.2 8.2 0 1 1 12 19.9Zm4.5-6.1c-.2-.1-1.4-.7-1.6-.8s-.4-.1-.5.1-.6.8-.7.9-.3.2-.5.1a6.6 6.6 0 0 1-3.3-2.9c-.2-.4.2-.4.6-1.2.1-.1 0-.3 0-.4L9.4 7.3c-.2-.4-.4-.4-.5-.4h-.5c-.2 0-.5.1-.7.3a2.9 2.9 0 0 0-.9 2.2c0 1.3.9 2.6 1.1 2.8.1.2 2 3 4.7 4.2.7.3 1.2.5 1.6.6.7.2 1.3.2 1.7.1.5-.1 1.4-.6 1.6-1.1s.2-1 .1-1.1-.2-.2-.4-.3Z"/></svg></a>
+        </div>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="about.html">About us</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="register.html">Register</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Learners</h4>
+        <ul>
+          <li><a href="profile.html">Create profile</a></li>
+          <li><a href="profile.html">Log in</a></li>
+          <li><a href="dashboard.html">My dashboard</a></li>
+          <li><a href="contact.html">Get help</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li>Johannesburg, Gauteng, South Africa</li>
+          <li><a href="mailto:hello@reabetswetechnologies.co.za">hello@reabetswetechnologies.co.za</a></li>
+          <li><a href="tel:+27000000000">+27 00 000 0000</a></li>
+          <li>Saturdays 10:00–12:00 (physical) · Online any day</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span data-year></span> Reabetswe Technologies. All rights reserved.</span>
+      <span>Built with HTML, CSS &amp; JavaScript.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script src="js/auth.js"></script>
+</body>
+</html>
